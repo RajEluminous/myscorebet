@@ -1,0 +1,82 @@
+$(document).ready(function () {
+		
+	// Registration form validation	
+    $('#frm_member_registration').validate({ // initialize the plugin
+        rules: {
+				first_name: {
+					required: true
+				},
+				last_name: {
+					required: true
+				},
+				email: {
+					required: true,
+					email: true
+				},
+				password: {
+					required: true
+				},
+        },
+		messages: {
+				first_name: "Enter your firstname",
+				last_name: "Enter your lastname",
+				email: "Enter your valid email id",
+				password: "Enter your password"
+		}
+    });
+	
+	// Login form validations
+	 $('#frm_member_login').validate({ // initialize the plugin
+        rules: {
+				 
+				email: {
+					required: true,
+					email: true
+				},
+				password: {
+					required: true
+				},
+        },
+		messages: {				 
+				email: "Enter your valid email id",
+				password: "Enter your password"
+		}
+    });
+
+	// Myaccount Reset Password
+	 $('#frm_member_myaccount').validate({ // initialize the plugin
+        rules: {
+				 
+				old_password: {
+					required: true,					 
+				},
+				new_password: {
+					required: true
+				},
+				confirm_password: {
+					required: true
+				},
+        },
+		messages: {				 
+				old_password: "Enter registered password",
+				new_password: "Enter your new password",
+				confirm_password: "Confirm your newly provided password"
+		}
+    });
+
+	// Forgot password
+	 $('#frm_member_forgotpassword').validate({ // initialize the plugin
+        rules: {				 
+				email: {
+					required: true,
+					email: true
+				},
+        },
+		messages: {				 
+				email: "Enter your registered email id",
+				new_password: "Enter your new password" 
+		}
+    });
+
+
+});
